@@ -1,25 +1,34 @@
 import 'package:flutter/material.dart';
-import 'package:liquid_swipe/liquid_swipe.dart';
 
-void main () => runApp(MyApp(),);
+void main() => runApp(
+      MyApp(),
+    );
 
 class MyApp extends StatelessWidget {
-  const MyApp({ Key? key }) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-
-    final pages = [
-      Container(color: Colors.green,),
-      Container(color: Colors.blue,),
-      Container(color: Colors.red,),
-      Container(color: Colors.yellow,),
-      Container(color: Colors.grey,),
-    ];
-
     return MaterialApp(
       home: Scaffold(
-        body: LiquidSwipe(pages: pages),
+        body: Center(
+          child: Stack(
+            alignment: Alignment.centerRight,
+            children: [
+              Container(
+                height: 200,
+                width: 200,
+                color: Colors.amber,
+              ),
+              Positioned(
+                top: -50,
+                child: CircleAvatar(
+                  radius: 50,
+                  backgroundColor: Colors.red,
+              ))
+            ],
+          ),
+        ),
       ),
     );
   }
